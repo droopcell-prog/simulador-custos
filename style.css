@@ -64,3 +64,40 @@ tr:hover{background:rgba(67,97,238,.02)}
 #installBanner{display:none;background:var(--primary);color:#fff;text-align:center;padding:8px 16px;font-size:.8rem;cursor:pointer}
 #installBanner strong{text-decoration:underline}
 @supports(padding-bottom:env(safe-area-inset-bottom)){.bottom-nav{padding-bottom:calc(4px + env(safe-area-inset-bottom))}.main{padding-bottom:calc(64px + env(safe-area-inset-bottom))}}
+
+/* ====== VEICULOS MODULE ====== */
+.section-title{font-size:.85rem;font-weight:600;color:var(--text2);margin:16px 0 10px;padding-bottom:4px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
+.help-text{font-size:.72rem;color:var(--text2);margin-top:3px;line-height:1.4;padding:6px 10px;background:rgba(67,97,238,.04);border-radius:4px;border-left:2px solid var(--primary)}
+.tooltip-wrap{display:inline-flex;align-items:center;gap:4px;cursor:pointer;position:relative}
+.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--border);color:var(--text2);font-size:.6rem;font-weight:700;cursor:pointer;flex-shrink:0;transition:.2s}
+.tooltip-icon:hover{background:var(--primary);color:#fff}
+.tooltip-bubble{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);font-size:.7rem;padding:8px 10px;border-radius:5px;white-space:nowrap;max-width:260px;white-space:normal;text-align:center;z-index:300;line-height:1.4;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.tooltip-wrap:hover .tooltip-bubble{display:block}
+.depreciation-info{margin-bottom:14px}
+.depreciation-info .help-text{margin-top:0}
+.fipe-row{display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap}
+.fipe-row .form-group{flex:1;min-width:100px}
+.fipe-row .form-group label{font-size:.72rem}
+.fipe-btn{padding:7px 14px;border:none;border-radius:5px;cursor:pointer;font-size:.78rem;font-weight:500;background:var(--success);color:#fff;white-space:nowrap;transition:.2s;height:fit-content}
+.fipe-btn:hover{opacity:.85}.fipe-btn:disabled{opacity:.4;cursor:not-allowed}
+.fipe-btn.loading{position:relative;color:transparent}.fipe-btn.loading::after{content:'';position:absolute;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;top:50%;left:50%;margin:-7px 0 0 -7px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fipe-status{font-size:.72rem;padding:4px 0;display:flex;align-items:center;gap:4px}
+.fipe-status.ok{color:var(--success)}
+.fipe-status.err{color:var(--danger)}
+.fipe-status.wait{color:var(--warning)}
+.validation-error{font-size:.72rem;color:var(--danger);margin-top:2px;display:none}
+.validation-error.show{display:block}
+.input-error{border-color:var(--danger)!important}
+.summary-card{margin-top:16px;padding-top:12px;border-top:2px solid var(--primary)}
+.summary-card h3{font-size:.82rem;margin-bottom:8px;color:var(--primary);display:flex;align-items:center;gap:4px}
+.summary-item{display:flex;justify-content:space-between;padding:4px 0;font-size:.8rem}
+.summary-item .sl{color:var(--text2)}
+.summary-item .sv{font-weight:600}
+.summary-item.total{font-size:.88rem;padding:8px 0;margin-top:4px;border-top:1px solid var(--border)}
+.summary-item.total .sv{color:var(--primary);font-size:1rem}
+.summary-item.positive .sv{color:var(--success)}
+.summary-item.negative .sv{color:var(--danger)}
+.fipe-tag{font-size:.65rem;padding:2px 6px;border-radius:3px;background:rgba(67,97,238,.08);color:var(--primary);display:inline-block}
+.form-section{background:rgba(67,97,238,.02);border-radius:6px;padding:12px;margin-bottom:12px}
+.form-section .form-row:last-child{margin-bottom:0}
