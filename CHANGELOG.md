@@ -1,28 +1,33 @@
 # Changelog
 
-## [1.1.0] - 2026-06-12
+## [2.0.0] - 2026-06-12
 
 ### Adicionado
-- Consulta integrada à tabela FIPE (API parallelum.com.br) no módulo Veículos
-- Seletor cascateante de Marca → Modelo → Ano para consulta FIPE
-- Auto-preenchimento do valor do veículo após consulta FIPE
-- Persistência dos dados da consulta FIPE (marca, modelo, ano, valor, data, código)
-- Tooltip explicativo sobre depreciação no formulário de veículos
-- Seções organizadas no formulário: Identificação, Consulta FIPE, Valor e Custos, Quilometragem
-- Resumo automático em tempo real do veículo (custo mensal, anual, por km)
-- Validação de campos obrigatórios (nome, valor > 0, km >= 0)
-- Indicador visual (tag "FIPE") nos veículos consultados na listagem
-- Suporte a hidden fields para metadados da consulta FIPE
+- 🏢 Modo Empresarial para cálculo avançado de custos operacionais de veículos
+- Seletor de modo (Simples / Empresarial) no módulo Veículos
+- **Bloco 1 - Aquisição e Desvalorização**: valor de aquisição, valor de venda previsto, prazo de troca (anos/meses), cálculo automático de depreciação total e mensal
+- **Bloco 2 - Utilização Operacional**: KM rodados por mês/ano com cálculo bidirecional automático e KM/dia estimado
+- **Bloco 3 - Custos Fixos**: seguro mensal, IPVA anual (convertido para mensal), estacionamento mensal, financiamento mensal, **emplacamento anual** (convertido para mensal)
+- **Bloco 4 - Custos Variáveis**: combustível mensal, pedágio mensal, lavagem mensal, multas anuais (convertidas para mensal)
+- **Bloco 5 - Custos de Reposição**: pneus (valor do jogo + vida útil em meses **ou KM**), manutenção anual, franquia (valor + período de rateio)
+- **Bloco 6 - Resumo Gerencial**: dashboard com 8 indicadores (valor, depreciação, custos fixos, variáveis, reposição, total mensal, custo/km, custo anual)
+- **Visualização Planilha IDEBRASIL**: toggle entre cards métricos e planilha detalhada no formato exato da planilha de custos
+- **Ano/Modelo** do veículo no formulário
+- **Custo "Percebido" Mensal**: campo para comparar estimativa do usuário vs custo real calculado
+- **Anotações**: seção com KM/L e cálculo automático de litros/mês
+- Cálculo alternativo de pneus via KM de vida útil (fórmula: KM útil ÷ KM/mês = meses)
+- Conversão automática de valores anuais para mensais com hints visuais (IPVA, multas, manutenção, emplacamento)
+- Relatório exportável (imprimir/PDF) com breakdown completo + comparação custo percebido
+- Badge de modo (🏢 Empresarial / 📋 Simples) na listagem de veículos
+- Validação específica para campos do modo empresarial
 
 ### Modificado
-- Formulário de veículos reorganizado com seções e labels mais descritivas
-- Texto de ajuda para campos de quilometragem e depreciação
-- Estilos CSS para tooltips, seções, cards de resumo e indicadores FIPE
+- `renderVeiculos()` agora detecta modo do veículo e renderiza formulário apropriado
+- `saveVeiculo()` e `editVeiculo()` com suporte a ambos os modos
+- Listagem de veículos com botão de relatório (📄)
+- Estrutura CSS estendida com cards de bloco, dashboard de métricas, toggle de modo, visualização planilha
 
-### Corrigido
-- Parsing de valores monetários da FIPE com suporte a múltiplos separadores de milhar
-
-## [1.0.0] - 2026-06-01
+## [1.1.0] - 2026-06-12
 
 ### Adicionado
 - Versão inicial do sistema de gestão financeira
