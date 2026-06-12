@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerar APK - Simulador de Custos</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#f5f7fa;color:#1a1a2e;padding:20px;max-width:800px;margin:0 auto}
+h1{font-size:1.3rem;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.card{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h2{font-size:1.1rem;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.card p{font-size:.9rem;color:#555;margin-bottom:10px;line-height:1.5}
+.card ol,.card ul{padding-left:20px;margin-bottom:12px}
+.card li{font-size:.85rem;color:#555;margin-bottom:6px;line-height:1.5}
+.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:500;background:#4361ee;color:#fff;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:#3a56d4}
+.btn-green{background:#2ec4b6}.btn-green:hover{background:#28a89d}
+.btn-orange{background:#f4a261}.btn-orange:hover{background:#e0914a}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600;background:rgba(67,97,238,.1);color:#4361ee;margin-right:4px}
+.tag-easy{background:rgba(46,196,182,.1);color:#2ec4b6}
+.tag-hard{background:rgba(230,57,70,.1);color:#e63946}
+hr{border:none;border-top:1px solid #e0e0e0;margin:16px 0}
+.step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.step-num{width:28px;height:28px;border-radius:50%;background:#4361ee;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.step-content{flex:1}
+.step-content p{margin-bottom:4px}
+code{background:#f0f0f5;padding:2px 6px;border-radius:3px;font-size:.8rem}
+@media(max-width:600px){body{padding:12px}h1{font-size:1.1rem}}
+</style>
+</head>
+<body>
+
+<h1>📱 Gerar APK para Android</h1>
+
+<div class="card">
+  <h2>📋 Pré-requisitos</h2>
+  <p>Você já tem os arquivos necessários na pasta <code>sistema/</code>:</p>
+  <ul>
+    <li>✅ <code>simulador-custos.html</code> — aplicativo completo</li>
+    <li>✅ <code>manifest.json</code> — manifesto PWA</li>
+    <li>✅ <code>sw.js</code> — service worker (offline)</li>
+    <li>✅ <code>icons/</code> — ícones em vários tamanhos</li>
+  </ul>
+  <p>Escolha um dos métodos abaixo para gerar o APK.</p>
+</div>
+
+<div class="card">
+  <h2><span class="tag tag-easy">Fácil</span> Método 1: PWABuilder (recomendado)</h2>
+  <p>Ferramenta gratuita da Microsoft que converte PWA em APK. Não precisa instalar nada.</p>
+  <hr>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content"><p><strong>Hospede temporariamente</strong> os arquivos em um servidor local ou gratuito.</p>
+    <p style="font-size:.82rem">Opções: <strong>Netlify Drop</strong> (https://app.netlify.com/drop), <strong>GitHub Pages</strong>, ou <strong>Python server</strong> (<code>python -m http.server 8080</code>).</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content"><p><strong>Acesse</strong> <a href="https://pwabuilder.com" target="_blank">https://pwabuilder.com</a></p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content"><p><strong>Cole a URL</strong> do seu app hospedado e clique em "Start".</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content"><p><strong>Clique em "Package for Stores"</strong> → depois em "Android".</p>
+    <p style="font-size:.82rem">O PWABuilder gera o APK assinado automaticamente.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content"><p><strong>Baixe o APK</strong> e instale no seu Android.</p>
+    <p style="font-size:.82rem">Talvez precise ativar "Instalar de fontes desconhecidas" nas configurações.</p></div>
+  </div>
+  <p style="margin-top:12px"><a href="https://pwabuilder.com" target="_blank" class="btn">🔗 Abrir PWABuilder</a></p>
+</div>
+
+<div class="card">
+  <h2><span class="tag tag-easy">Fácil</span> Método 2: WAPK Generator (online)</h2>
+  <p>Alternativa gratuita que não precisa de hospedagem — você envia o HTML diretamente.</p>
+  <hr>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content"><p>Acesse <strong>https://appmaker.xyz/pwa-to-apk</strong></p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content"><p>Informe a URL do seu app e clique em <strong>"Generate APK"</strong>.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content"><p>Baixe o APK gerado e instale no celular.</p></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="tag tag-hard">Avançado</span> Método 3: Android Studio (controle total)</h2>
+  <p>Para quem quer personalizar ícone, splash screen, permissões, etc.</p>
+  <hr>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content"><p><strong>Instale o Android Studio</strong> em https://developer.android.com/studio</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content"><p>Crie um novo projeto <strong>"Empty Activity"</strong>.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content"><p>Adicione um <strong>WebView</strong> que carrega o arquivo local:</p>
+    <p style="margin-top:4px"><code>webView.loadUrl("file:///android_asset/simulador-custos.html")</code></p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content"><p>Copie <code>simulador-custos.html</code> + <code>icons/</code> para <code>src/main/assets/</code>.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content"><p>Ative o JavaScript e o armazenamento interno no WebView:</p>
+    <p style="margin-top:4px"><code>webView.settings.javaScriptEnabled = true</code><br>
+    <code>webView.settings.domStorageEnabled = true</code></p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-content"><p>Gere o APK assinado em <strong>Build → Generate Signed Bundle / APK</strong>.</p></div>
+  </div>
+</div>
+
+<div class="card" style="border-left:3px solid #2ec4b6">
+  <h2>💡 Dica: PWA já instala sem APK</h2>
+  <p>O próprio navegador Chrome no Android já permite instalar o app na tela inicial sem precisar de APK. Basta:</p>
+  <ol>
+    <li>Abrir o <code>simulador-custos.html</code> no Chrome</li>
+    <li>Clicar nos três pontinhos <strong>⋮</strong></li>
+    <li>Selecionar <strong>"Adicionar à tela inicial"</strong></li>
+  </ol>
+  <p style="margin-top:8px;font-size:.82rem;color:#888">O app instalado via PWA funciona offline, ocupa pouco espaço e tem o mesmo comportamento de um app nativo.</p>
+</div>
+
+<div class="card" style="text-align:center;padding:16px">
+  <p style="font-size:.82rem;color:#888">Todos os métodos são gratuitos. Nenhum servidor ou hospedagem permanente é necessária.</p>
+  <p style="margin-top:6px"><a href="simulador-custos.html" class="btn btn-green">⬅️ Voltar ao Simulador</a></p>
+</div>
+
+</body>
+</html>
