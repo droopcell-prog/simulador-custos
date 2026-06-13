@@ -1,4 +1,4 @@
-const CACHE = 'simulador-custos-v1';
+const CACHE = 'simulador-custos-v2';
 const ASSETS = [
   './',
   './index.html',
